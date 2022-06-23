@@ -1,10 +1,12 @@
 // console.log ('ahoy');
+//Comment: HTML source correct, used as a test.
 
 //function sayHi() {
 //    console.log ('Hi')
 //}
 
 //sayHi()
+//Comment: it worked. Used as a remember.
 
 function sayHiTo(someone) {
     if (!someone) {
@@ -20,6 +22,8 @@ sayHiTo()
 sayHiTo(18)
 sayHiTo('huehhue')
 sayHiTo('Onelio')
+
+//Comment: it worked apparently. not sure how to test it in an embracing way.
 
 const pets = [
     {
@@ -114,21 +118,41 @@ const pets = [
     },
 ]
 
+//function describePet() {
+//    pets.forEach(pet => {
+//        if (pet.gender === 'MALE' && pet.specie === 'canine') {
+//            console.log (pet.name + ' is a male dog')
+//        }
+//        if (pet.gender === 'FEMALE' && pet.specie === 'canine') {
+//            console.log (pet.name + ' is a female dog')
+//        }
+//        if (pet.gender === 'MALE' && pet.specie === 'feline') {
+//            console.log (pet.name + ' is a male cat')
+//        }
+//        if (pet.gender === 'FEMALE' && pet.specie === 'feline') {
+//            console.log (pet.name + ' is a female cat')
+//    }
+//    })    
+//}
+//
+//describePet();
+//comment: it worked! but too many ifs.
+
 function describePet() {
     pets.forEach(pet => {
-        if (pet.gender === 'MALE' && pet.specie === 'canine') {
-            console.log (pet.name + ' is a male dog')
+        if (pet.specie === 'feline') {
+            var specie = pet.specie.replace (/feline/gi, 'cat'); //don't know what //gi means, found it on the web.
+        } else if (pet.specie === 'canine') {
+            var specie = pet.specie.replace (/canine/gi, 'dog'); //figured I could use only else, but thought in case I've added one more specie this else if would be more accurate.
         }
-        if (pet.gender === 'FEMALE' && pet.specie === 'canine') {
-            console.log (pet.name + ' is a female dog')
-        }
-        if (pet.gender === 'MALE' && pet.specie === 'feline') {
-            console.log (pet.name + ' is a male cat')
-        }
-        if (pet.gender === 'FEMALE' && pet.specie === 'feline') {
-            console.log (pet.name + ' is a female cat')
-    }
-    })    
+        let text = (`${pet.name} is a ${pet.gender} ${specie}.`); //didn't remember how to use the $, found it on the web as well.
+        console.log (text[0].toUpperCase () + text.slice(1).toLowerCase());
+    })
 }
 
 describePet();
+
+//comment: it worked, same result, but shorter code.
+//don't know how exactly the UpperCase, slice and LowerCase work, as the numbers between ().
+//I imagine it means something like I set uppercase from the beginning [0], then from the next character position (1) on, I set lowercase.
+
